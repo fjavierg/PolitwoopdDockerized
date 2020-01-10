@@ -1,7 +1,7 @@
 # PolitwoopsDockerized
-Dockerization of politwoops tweeter collector and updates to python3
+Dockerization of politwoops tweeter collector and updates to python3.
 
-This project collects deleted tweets from twitter users.
+This project collects deleted tweets from twitter users. 
 
 Original project in https://github.com/propublica/politwoops-tweet-collector
 Dockerized and updates for Python3 in https://github.com/fjavierg/PolitwoopsInDocker
@@ -16,7 +16,7 @@ Dockerized and updates for Python3 in https://github.com/fjavierg/PolitwoopsInDo
                
 * **Usage:**    
     - Populate Politicans DB table with twitter ids of user to collect tweets
-              Build and run container for weeks, months or years. Tweets created and deleted
+              Build and run docker container. Run the server for weeks, months or years, tweets created and deleted
               by populated users will be stored in DB (if they were created and deleted during 
               scripts execution).
               
