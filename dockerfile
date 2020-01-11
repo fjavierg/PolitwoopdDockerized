@@ -23,10 +23,11 @@ WORKDIR /usr/src/app
 COPY politwoops-tweet-collector.zip ./
 RUN apt-get update
 RUN apt-get install unzip
-RUN umask 744;unzip politwoops-tweet-collector.zip
+RUN umask 000;unzip politwoops-tweet-collector.zip
 RUN pip install -r politwoops-tweet-collector/requirements.txt
 RUN apt-get install beanstalkd
 COPY tweets-client.ini ./politwoops-tweet-collector/conf
-COPY politwoops-docker.sh .
-CMD ./politwoops-docker.sh start;bash
-
+COPY politwoops .
+CMD /bin/sh -c 'beanstalkd -l localhost -V &' &&\
+  ./politwoops start &&\
+  bash
